@@ -6,9 +6,9 @@
       :visible.sync="dialogFormVisible"
       style="max-width: 8000px"
       @close="clear">
-          <el-form v-model="form" style="text-align: left;" ref="dataForm">
-            <el-row :gutter="40">
-              <el-col :span="15">
+      <el-form v-model="form" style="text-align: left;" ref="dataForm">
+        <el-row :gutter="40">
+          <el-col :span="15">
             <el-form-item prop="id" style="height: 0">
               <el-input type="hidden" v-model="form.id" autocomplete="off"></el-input>
             </el-form-item>
@@ -55,79 +55,77 @@
             <el-form-item label="出生地" :label-width="formLabelWidth" prop="birplace">
               <el-input v-model="form.birplace" autocomplete="off" ></el-input>
             </el-form-item>
-        </el-col>
-        <el-col :span="15">
-          <el-form-item label="家庭住址" :label-width="formLabelWidth" prop="address1" >
-            <el-input v-model="form.address1" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="文化程度" :label-width="formLabelWidth" prop="edudegree">
-            <el-select v-model="form.edudegree" placeholder="请选择文化程度">
-              <el-option label="小学" value="小学"></el-option>
-              <el-option label="初中" value="初中"></el-option>
-              <el-option label="高中" value="高中"></el-option>
-              <el-option label="中专" value="中专"></el-option>
-              <el-option label="本科" value="本科"></el-option>
-              <el-option label="硕士" value="硕士"></el-option>
-              <el-option label="博士" value="博士"></el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item label="服务处所" :label-width="formLabelWidth" prop="emplace" >
-            <el-input v-model="form.emplace" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="何时迁入本市（县）" :label-width="formLabelWidth" prop="whenincity">
-            <div class="block">
-              <el-date-picker
-                v-model="form.whenincity"
-                type="date"
-                placeholder="何时迁入本市（县）">
-              </el-date-picker>
-            </div>
-          </el-form-item>
-          <el-form-item label="何地迁入本市（县）" :label-width="formLabelWidth" prop="whereincity" >
-            <el-input v-model="form.whereincity" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="何时迁入本址" :label-width="formLabelWidth" prop="whenin">
-            <div class="block">
-              <el-date-picker
-                v-model="form.whenin"
-                type="date"
-                placeholder="何时迁入本址">
-              </el-date-picker>
-            </div>
-          </el-form-item>
-          <el-form-item label="何地迁入本址" :label-width="formLabelWidth" prop="wherein" >
-            <el-input v-model="form.wherein" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="职业" :label-width="formLabelWidth" prop="occupation" >
-            <el-input v-model="form.occupation" autocomplete="off"></el-input>
-          </el-form-item>
-          <el-form-item label="兵役情况" :label-width="formLabelWidth" prop="arstatus">
-            <el-select v-model="form.arstatus" placeholder="请选择婚姻情况">
-              <el-option label="条件不符" value="条件不符"></el-option>
-              <el-option label="未服兵役" value="未服兵役"></el-option>
-              <el-option label="已服兵役" value="已服兵役"></el-option>
-              <el-option label="服役中" value="服役中"></el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item label="婚姻情况" :label-width="formLabelWidth" prop="marstatus">
-            <el-select v-model="form.marstatus" placeholder="请选择婚姻情况">
-              <el-option label="离婚" value="离婚"></el-option>
-              <el-option label="未婚" value="未婚"></el-option>
-              <el-option label="丧偶" value="丧偶"></el-option>
-            </el-select>
-          </el-form-item>
+          </el-col>
+          <el-col :span="15">
+            <el-form-item label="家庭住址" :label-width="formLabelWidth" prop="address1" >
+              <el-input v-model="form.address1" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="文化程度" :label-width="formLabelWidth" prop="edudegree">
+              <el-select v-model="form.edudegree" placeholder="请选择文化程度">
+                <el-option label="小学" value="小学"></el-option>
+                <el-option label="初中" value="初中"></el-option>
+                <el-option label="高中" value="高中"></el-option>
+                <el-option label="中专" value="中专"></el-option>
+                <el-option label="本科" value="本科"></el-option>
+                <el-option label="硕士" value="硕士"></el-option>
+                <el-option label="博士" value="博士"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="服务处所" :label-width="formLabelWidth" prop="emplace" >
+              <el-input v-model="form.emplace" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="何时迁入本市（县）" :label-width="formLabelWidth" prop="whenincity">
+              <div class="block">
+                <el-date-picker
+                  v-model="form.whenincity"
+                  type="date"
+                  placeholder="何时迁入本市（县）">
+                </el-date-picker>
+              </div>
+            </el-form-item>
+            <el-form-item label="何地迁入本市（县）" :label-width="formLabelWidth" prop="whereincity" >
+              <el-input v-model="form.whereincity" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="何时迁入本址" :label-width="formLabelWidth" prop="whenin">
+              <div class="block">
+                <el-date-picker
+                  v-model="form.whenin"
+                  type="date"
+                  placeholder="何时迁入本址">
+                </el-date-picker>
+              </div>
+            </el-form-item>
+            <el-form-item label="何地迁入本址" :label-width="formLabelWidth" prop="wherein" >
+              <el-input v-model="form.wherein" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="职业" :label-width="formLabelWidth" prop="occupation" >
+              <el-input v-model="form.occupation" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="兵役情况" :label-width="formLabelWidth" prop="arstatus">
+              <el-select v-model="form.arstatus" placeholder="请选择婚姻情况">
+                <el-option label="条件不符" value="条件不符"></el-option>
+                <el-option label="未服兵役" value="未服兵役"></el-option>
+                <el-option label="已服兵役" value="已服兵役"></el-option>
+                <el-option label="服役中" value="服役中"></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="婚姻情况" :label-width="formLabelWidth" prop="marstatus">
+              <el-select v-model="form.marstatus" placeholder="请选择婚姻情况">
+                <el-option label="离婚" value="离婚"></el-option>
+                <el-option label="未婚" value="未婚"></el-option>
+                <el-option label="丧偶" value="丧偶"></el-option>
+              </el-select>
+            </el-form-item>
 
-          <el-form-item label="户主与户主关系" :label-width="formLabelWidth" prop="reholder">
-            <el-select v-model="form.reholder" placeholder="户主与户主关系">
-              <el-option label="夫妻" value="夫妻"></el-option>
-              <el-option label="父子" value="父子"></el-option>
-              <el-option label="母子" value="母子"></el-option>
-            </el-select>
-          </el-form-item>
-        </el-col>
-      </el-row>
-
-
+            <el-form-item label="户主与户主关系" :label-width="formLabelWidth" prop="reholder">
+              <el-select v-model="form.reholder" placeholder="户主与户主关系">
+                <el-option label="夫妻" value="夫妻"></el-option>
+                <el-option label="父子" value="父子"></el-option>
+                <el-option label="母子" value="母子"></el-option>
+              </el-select>
+            </el-form-item>
+          </el-col>
+        </el-row>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -206,7 +204,7 @@
       },
       onSubmit () {
         this.$axios
-          .post('/residents', {
+          .post('/admin/people/residents', {
             id: this.form.id,
             name: this.form.name,
             uname: this.form.uname,
@@ -242,15 +240,7 @@
 </script>
 
 <style scoped>
-  .el-icon-circle-plus-outline {
-    margin: 50px 0 0 20px;
-    font-size: 90px;
-    float: left;
-    cursor: pointer;
-  }
-  .el-input {
-    autosize: true
+  .add-button {
+    margin: 18px 0 0 10px;
   }
 </style>
-
-

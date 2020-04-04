@@ -2,7 +2,8 @@
   <el-upload
     class="img-upload"
     ref="upload"
-    action="http://139.224.2.57:8443/api/photos"
+    action="http://139.224.2.57:10031/api/admin/people/residents/photos"
+    with-credentials
     :on-preview="handlePreview"
     :on-remove="handleRemove"
     :before-remove="beforeRemove"
@@ -27,8 +28,12 @@
     },
     methods: {
       handleRemove (file, fileList) {
+        console.log(file, fileList)
       },
       handlePreview (file) {
+        console.log(file)
+        // 此处的 file 是整个文件
+        // console.log(file.response)
       },
       handleExceed (files, fileList) {
         this.$message.warning(`当前限制选择 1 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`)
@@ -38,6 +43,7 @@
       },
       handleSuccess (response) {
         this.url = response
+        // console.log(this.url)
         this.$emit('onUpload')
         this.$message.warning('上传成功')
       },
@@ -47,3 +53,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .img-upload {
+    /*height: 200px;*/
+  }
+</style>
