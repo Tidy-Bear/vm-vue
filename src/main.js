@@ -12,7 +12,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(Element)
 
 var axios = require('axios')
-axios.defaults.baseURL = 'http://localhost:8443/api'
+axios.defaults.baseURL = 'http://139.224.2.57:8443/api'
 // 使请求带上凭证信息
 axios.defaults.withCredentials = true
 

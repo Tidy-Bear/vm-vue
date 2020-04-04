@@ -6,5 +6,16 @@
 * ElementUI
 * axios
 在开发过程中可能会不断引入新的技术，前端团队会将有必要的技术新增上去。
+## 本地部署
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+```
 
 

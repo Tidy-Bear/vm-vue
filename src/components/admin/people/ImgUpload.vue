@@ -2,7 +2,7 @@
   <el-upload
     class="img-upload"
     ref="upload"
-    action="http://139.224.2.57:10031/api/admin/people/residents/photos"
+    action="http://139.224.2.57:8443/api/admin/people/residents/photos"
     with-credentials
     :on-preview="handlePreview"
     :on-remove="handleRemove"

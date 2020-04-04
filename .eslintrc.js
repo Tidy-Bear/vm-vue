@@ -23,6 +23,10 @@ module.exports = {
   rules: {
     // allow async-await
     'generator-star-spacing': 'off',
+    // 取消强制驼峰命名
+    'camelcase': 'off',
+    // 'no-tabs': 'off',
+    'indent': ["off", 2],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-console':'off', // 禁止console的报错检查
