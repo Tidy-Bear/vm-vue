@@ -15,7 +15,6 @@
             <el-form-item label="姓名" :label-width="formLabelWidth" prop="name">
               <el-input v-model="form.name" autocomplete="off" ></el-input>
             </el-form-item>
-
             <el-form-item label="身份证" :label-width="formLabelWidth" prop="idnum">
               <el-input v-model="form.idnum" autocomplete="off"></el-input>
             </el-form-item>
@@ -36,9 +35,6 @@
                   placeholder="选择出生日期">
                 </el-date-picker>
               </div>
-            </el-form-item>
-            <el-form-item label="籍贯" :label-width="formLabelWidth" prop="height">
-              <el-input v-model="form.height" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item label="正面免冠照片" :label-width="formLabelWidth" prop="photo">
               <el-input v-model="form.photo" autocomplete="off"></el-input>
@@ -75,18 +71,6 @@
                 <el-option label="博士" value="博士"></el-option>
               </el-select>
             </el-form-item>
-            <el-form-item label="入党时所在支部" :label-width="formLabelWidth" prop="joinpartybranch" >
-              <el-input v-model="form.joinpartybranch" autocomplete="off"></el-input>
-            </el-form-item>
-            <el-form-item label="转入当前党支部日期" :label-width="formLabelWidth" prop="inbranchtime">
-              <div class="block">
-                <el-date-picker
-                  v-model="form.inbranchtime"
-                  type="date"
-                  placeholder="何时转入当前党支部">
-                </el-date-picker>
-              </div>
-            </el-form-item>
             <el-form-item label="入党时间" :label-width="formLabelWidth" prop="joinpartytime" >
               <el-input v-model="form.joinpartytime" autocomplete="off"></el-input>
             </el-form-item>
@@ -96,6 +80,21 @@
                   v-model="form.beregulartime"
                   type="date"
                   placeholder="何时转正">
+                </el-date-picker>
+              </div>
+            </el-form-item>
+            <el-form-item label="入党介绍人" :label-width="formLabelWidth" prop="joinpartybranch" >
+              <el-input v-model="form.jointroducer" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="入党时所在支部" :label-width="formLabelWidth" prop="joinpartybranch" >
+              <el-input v-model="form.joinpartybranch" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="转入当前党支部日期" :label-width="formLabelWidth" prop="inbranchtime">
+              <div class="block">
+                <el-date-picker
+                  v-model="form.inbranchtime"
+                  type="date"
+                  placeholder="何时转入当前党支部">
                 </el-date-picker>
               </div>
             </el-form-item>
@@ -123,7 +122,7 @@
 </template>
 
 <script>
-  import ImgUpload from './ImgUpload'
+  import ImgUpload from './ImgUploadPM'
   export default {
     name: 'EditForm',
     components: {ImgUpload},
@@ -142,7 +141,7 @@
           idnum: '',
           photo: '',
           joinpartybranch: '',
-          jpintroducer: '',
+          jointroducer: '',
           inbranchtime: '',
           outbranch: '',
           branchpost: '',
@@ -171,7 +170,7 @@
             idnum: '',
             photo: '',
             joinpartybranch: '',
-            jpintroducer: '',
+            jointroducer: '',
             inbranchtime: '',
             outbranch: '',
             branchpost: '',
@@ -189,7 +188,7 @@
       },
       onSubmit () {
         this.$axios
-          .post('/admin/people/residents', {
+          .put('/admin/partymember/members', {
             id: this.form.id,
             name: this.form.name,
             sex: this.form.sex,
@@ -201,7 +200,7 @@
             idnum: this.form.idnum,
             photo: this.form.photo,
             joinpartybranch: this.form.joinpartybranch,
-            jpintroducer: this.form.jpintroducer,
+            jointroducer: this.form.jointroducer,
             inbranchtime: this.form.inbranchtime,
             outbranch: this.form.outbranch,
             branchpost: this.form.branchpost,

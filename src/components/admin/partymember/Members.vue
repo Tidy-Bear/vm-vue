@@ -10,7 +10,7 @@
     <edit-form @onSubmit="loadBooks()" ref="edit"></edit-form>
     <el-card style="margin: 18px 2%;width: 95%">
       <el-table
-        :data="residents"
+        :data="members"
         stripe
         style="width: 100%"
         :max-height="tableHeight">
@@ -87,13 +87,13 @@
 </template>
 
 <script>
-  import EditForm from './EditForm'
+  import EditForm from './EditFormPM'
   export default {
     name: 'Members',
     components: {EditForm},
     data () {
       return {
-        residents: []
+        members: []
       }
     },
     mounted () {
@@ -112,7 +112,7 @@
           type: 'warning'
         }).then(() => {
             this.$axios
-              .post('/admin/people/residents/delete', {id: id}).then(resp => {
+              .put('/admin/partymember/members/delete', {id: id}).then(resp => {
               if (resp && resp.data.code === 200) {
                 this.loadBooks()
               }
@@ -139,7 +139,7 @@
           idnum: item.idnum,
           photo: item.photo,
           joinpartybranch: item.joinpartybranch,
-          jpintroducer: item.jpintroducer,
+          jointroducer: item.jointroducer,
           inbranchtime: item.inbranchtime,
           outbranch: item.outbranch,
           branchpost: item.branchpost,
@@ -157,9 +157,9 @@
       },
       loadBooks () {
         var _this = this
-        this.$axios.get('/residents').then(resp => {
+        this.$axios.get('/members').then(resp => {
           if (resp && resp.status === 200) {
-            _this.residents = resp.data
+            _this.members = resp.data
           }
         })
       }

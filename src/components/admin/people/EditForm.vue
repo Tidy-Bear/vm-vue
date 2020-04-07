@@ -204,7 +204,7 @@
       },
       onSubmit () {
         this.$axios
-          .post('/admin/people/residents', {
+          .put('/admin/people/residents', {
             id: this.form.id,
             name: this.form.name,
             uname: this.form.uname,

@@ -112,7 +112,7 @@
           type: 'warning'
         }).then(() => {
             this.$axios
-              .post('/admin/people/residents/delete', {id: id}).then(resp => {
+              .put('/admin/people/residents/delete', {id: id}).then(resp => {
               if (resp && resp.data.code === 200) {
                 this.loadBooks()
               }
