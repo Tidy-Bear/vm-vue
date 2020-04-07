@@ -49,6 +49,9 @@
             <el-form-item label="现工作单位及职务" :label-width="formLabelWidth" prop="unitpost">
               <el-input v-model="form.unitpost" autocomplete="off" ></el-input>
             </el-form-item>
+            <el-form-item label="现任党内职务" :label-width="formLabelWidth" prop="branchpost">
+              <el-input v-model="form.branchpost" autocomplete="off" ></el-input>
+            </el-form-item>
             <el-form-item label="户籍所在地" :label-width="formLabelWidth" prop="registerplace">
               <el-input v-model="form.registerplace" autocomplete="off" ></el-input>
             </el-form-item>
