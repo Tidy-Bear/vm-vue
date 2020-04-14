@@ -44,7 +44,7 @@
         </el-table-column>
         <el-table-column
           prop="birthdate"
-          label="生日"
+          label="出生日期"
           fit>
         </el-table-column>
         <el-table-column
@@ -113,6 +113,8 @@
         }).then(() => {
             this.$axios
               .put('/admin/partymember/members/delete', {id: id}).then(resp => {
+              location.reload()
+              this.$router.go(0)
               if (resp && resp.data.code === 200) {
                 this.loadBooks()
               }

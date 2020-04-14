@@ -1,7 +1,8 @@
 <template>
     <div class="error-page">
       <div style="padding:100px 500px 0px 0px">
-        <img src="../../assets/img/icon/404.png" class="error-tag">
+<!--        <img src="../../assets/img/icon/404.png" class="error-tag">-->
+        <p>请等一下喔！😉️</p>
       </div>
     </div>
 </template>
@@ -21,5 +22,7 @@
     width: 100%;
     background-size: cover;
     position: fixed;
+    font-size: 80px;
   }
+
 </style>

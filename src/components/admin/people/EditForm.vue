@@ -136,107 +136,107 @@
 </template>
 
 <script>
-  import ImgUpload from './ImgUpload'
-  export default {
-    name: 'EditForm',
-    components: {ImgUpload},
-    data () {
-      return {
-        dialogFormVisible: false,
-        form: {
-          id: '',
-          name: '',
-          uname: '',
-          naplace: '',
-          birplace: '',
-          address1: '',
-          edudegree: '',
-          emplace: '',
-          whenincity: '',
-          whereincity: '',
-          whenin: '',
-          wherein: '',
-          occupation: '',
-          arstatus: '',
-          marstatus: '',
-          height: '',
-          religion: '',
-          birthdate: '',
-          natived: '',
-          sex: '',
-          reholder: '',
-          photo: '',
-          idnum: ''
-        },
-        formLabelWidth: '160px'
+import ImgUpload from './ImgUpload'
+export default {
+  name: 'EditForm',
+  components: {ImgUpload},
+  data () {
+    return {
+      dialogFormVisible: false,
+      form: {
+        id: '',
+        name: '',
+        uname: '',
+        naplace: '',
+        birplace: '',
+        address1: '',
+        edudegree: '',
+        emplace: '',
+        whenincity: '',
+        whereincity: '',
+        whenin: '',
+        wherein: '',
+        occupation: '',
+        arstatus: '',
+        marstatus: '',
+        height: '',
+        religion: '',
+        birthdate: '',
+        natived: '',
+        sex: '',
+        reholder: '',
+        photo: '',
+        idnum: ''
+      },
+      formLabelWidth: '160px'
+    }
+  },
+  methods: {
+    clear () {
+      this.form = {
+        id: '',
+        name: '',
+        uname: '',
+        naplace: '',
+        birplace: '',
+        address1: '',
+        edudegree: '',
+        emplace: '',
+        whenincity: '',
+        whereincity: '',
+        whenin: '',
+        wherein: '',
+        occupation: '',
+        arstatus: '',
+        marstatus: '',
+        height: '',
+        religion: '',
+        birthdate: '',
+        natived: '',
+        sex: '',
+        reholder: '',
+        photo: '',
+        idnum: ''
       }
     },
-    methods: {
-      clear () {
-        this.form = {
-          id: '',
-          name: '',
-          uname: '',
-          naplace: '',
-          birplace: '',
-          address1: '',
-          edudegree: '',
-          emplace: '',
-          whenincity: '',
-          whereincity: '',
-          whenin: '',
-          wherein: '',
-          occupation: '',
-          arstatus: '',
-          marstatus: '',
-          height: '',
-          religion: '',
-          birthdate: '',
-          natived: '',
-          sex: '',
-          reholder: '',
-          photo: '',
-          idnum: ''
+    uploadImg () {
+      this.form.photo = this.$refs.imgUpload.url
+    },
+    onSubmit () {
+      this.$axios
+        .put('/admin/people/residents', {
+          id: this.form.id,
+          name: this.form.name,
+          uname: this.form.uname,
+          naplace: this.form.naplace,
+          birplace: this.form.birplace,
+          address1: this.form.address1,
+          edudegree: this.form.edudegree,
+          emplace: this.form.emplace,
+          whenincity: this.form.whenincity,
+          whereincity: this.form.whereincity,
+          whenin: this.form.whenin,
+          wherein: this.form.wherein,
+          occupation: this.form.occupation,
+          arstatus: this.form.arstatus,
+          marstatus: this.form.marstatus,
+          height: this.form.height,
+          religion: this.form.religion,
+          birthdate: this.form.birthdate,
+          natived: this.form.natived,
+          sex: this.form.sex,
+          reholder: this.form.reholder,
+          photo: this.form.photo,
+          idnum: this.form.idnum
+        }).then(resp => {
+        if (resp && resp.status === 200) {
+          this.dialogFormVisible = false
+          this.$emit('onSubmit')
         }
-      },
-      uploadImg () {
-        this.form.photo = this.$refs.imgUpload.url
-      },
-      onSubmit () {
-        this.$axios
-          .put('/admin/people/residents', {
-            id: this.form.id,
-            name: this.form.name,
-            uname: this.form.uname,
-            naplace: this.form.naplace,
-            birplace: this.form.birplace,
-            address1: this.form.address1,
-            edudegree: this.form.edudegree,
-            emplace: this.form.emplace,
-            whenincity: this.form.whenincity,
-            whereincity: this.form.whereincity,
-            whenin: this.form.whenin,
-            wherein: this.form.wherein,
-            occupation: this.form.occupation,
-            arstatus: this.form.arstatus,
-            marstatus: this.form.marstatus,
-            height: this.form.height,
-            religion: this.form.religion,
-            birthdate: this.form.birthdate,
-            natived: this.form.natived,
-            sex: this.form.sex,
-            reholder: this.form.reholder,
-            photo: this.form.photo,
-            idnum: this.form.idnum
-          }).then(resp => {
-          if (resp && resp.status === 200) {
-            this.dialogFormVisible = false
-            this.$emit('onSubmit')
-          }
-        })
-      }
+      })
     }
   }
+}
 </script>
 
 <style scoped>
